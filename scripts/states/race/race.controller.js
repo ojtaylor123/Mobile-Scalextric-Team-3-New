@@ -1,15 +1,15 @@
-(function() {
-  'use strict';
-  
-  angular.module('app.raceState').controller('raceCtrl', raceCtrl);
-  
-  raceCtrl.$inject = [
-    '$scope',
-    '$timeout',
-    '$q',
-    'locationsSrvc',
-    'sightingSrvc,
-    '$state',
-    'toaster'    
-  ];
+(function () {
+
+    'use strict';
+
+    var app = angular.module('app.raceState');
+
+    app.controller('raceCtrl', raceCtrl);
+
+    raceCtrl.$inject = [];
+
+    function raceCtrl() {
+        var vm = angular.extend(this, {});
+        return vm;
+    }
 })();
