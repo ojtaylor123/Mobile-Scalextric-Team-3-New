@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('app.loginState', []);
+    var app = angular.module('app.casualState', []);
 
     app.config(function ($stateProvider) {
         $stateProvider.state('casual', {
