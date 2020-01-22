@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('singleplayer.loseState', []);
+    var app = angular.module('app.singleplayerState', []);
 
     app.config(function ($stateProvider) {
         $stateProvider.state('singleplayer', {
