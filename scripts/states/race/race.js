@@ -12,5 +12,6 @@
             controller: 'raceCtrl as vm',
             cache: false
         });
+        $urlRouterProvider.otherwise('/race');
     });
 })();
