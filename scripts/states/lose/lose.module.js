@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('app.loseState', [ui.router]);
+    var app = angular.module('app.loseState', ['ui.router']);
 
     app.config(function ($stateProvider) {
         $stateProvider.state('lose', {
