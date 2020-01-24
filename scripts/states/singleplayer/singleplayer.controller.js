@@ -6,7 +6,7 @@
 
     app.controller('singleplayerCtrl', singleplayerCtrl);
 
-    singleplayerCtrl.$inject = [];
+    singleplayerCtrl.$inject = [ '$scope' ];
 
     function singleplayerCtrl() {
         var vm = angular.extend(this, {});
