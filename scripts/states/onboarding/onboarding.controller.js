@@ -17,7 +17,7 @@
     ) {
         var vm = angular.extend(this, {});
         
-        vm.update = function(){            
+        vm.goToQueue = function(){            
             $state.go('queue');
         }     
     }
