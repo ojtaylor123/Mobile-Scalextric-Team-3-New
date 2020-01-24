@@ -1,17 +1,16 @@
 (function () {
 
-  'use strict';
+    'use strict';
 
- var app = angular.module('app.singleplayerState', []);
-  
-  app.controller('singleplayerCtrl', singleplayerCtrl);
+    var app = angular.module('app.singleplayerState');
 
-  singleplayerCtrl.$inject = [
-    '$state'
-  ];
+    app.controller('singleplayerCtrl', singleplayerCtrl);
 
-  function singleplayerCtrl($state) {
-    $state.go("singleplayer");
-  }
+    singleplayerCtrl.$inject = [];
+
+    function singleplayerCtrl() {
+        var vm = angular.extend(this, {});
+        return vm;
+    }
 
 })();
