@@ -1,9 +1,13 @@
-var app = angular.module("myApp", []);
+(function () {
+  var app = angular.module("myApp", ['ui.router']);
+  
+  app.run(function ($state, $rootScope) {
+    $rootScope.$on('$stateChangeError', function (toState, toParams, fromState, fromParams){
+      console.log('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
+    
+      $state.get('race')
+    });
+  })
+})();
 
-$stateProvider.state(onboardingState);
-$stateProvider.state(queueState);
-$stateProvider.state(raceState);
-$stateProvider.state(casualState);
-$stateProvider.state(singleplayerState);
-$stateProvider.state(winState);
-$stateProvider.state(loseState);
+
