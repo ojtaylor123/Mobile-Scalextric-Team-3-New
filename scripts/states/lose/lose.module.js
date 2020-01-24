@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('app.loseState', []);
+    var app = angular.module('app.loseState', [ui.router]);
 
     app.config(function ($stateProvider) {
         $stateProvider.state('lose', {
@@ -11,6 +11,7 @@
             controller: 'loseCtrl as vm',
             cache: false
         })
+        $urlRouterProvider.otherwise('/race');
     });
 
 })();
