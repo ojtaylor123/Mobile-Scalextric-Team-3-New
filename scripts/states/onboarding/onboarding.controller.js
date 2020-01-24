@@ -6,11 +6,22 @@
 
     app.controller('onboardingCtrl', onboardingCtrl);
 
-    aboutCtrl.$inject = [];
+    onboardingCtrl.$inject = [
+        '$state',
+        '$stateprams'
+    ];
 
-    function onboardingCtrl() {
+    function onboardingCtrl(
+        $state,
+        $stateParams
+    ) {
         var vm = angular.extend(this, {});
-        return vm;
+        
+        vm.done = function(){
+            $state.go('queue');
+        }
+            
+        var params = $stateParams;        
     }
 
 })();
