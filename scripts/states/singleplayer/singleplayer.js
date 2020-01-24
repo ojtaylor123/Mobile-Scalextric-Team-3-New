@@ -1,19 +1,14 @@
-(function () {
+var myApp = angular.module('singleplayerState', ['ui.router']);
 
-    'use strict';
+myApp.config(function($stateProvider) {
+  var singleplayerState = {
+    name: 'singleplayer',
+    url: '/singleplayer',
+    template: '<h3>singleplayer</h3>'
+  }
 
-    var app = angular.module('app.singleplayerState', ['ui.router']);
+  $stateProvider.state(singelplayerState);
 
-    app.config(function ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('singleplayer', {
-            url: '/singleplayer',
-            templateUrl: 'scripts/states/singleplayer/singleplayer.html',
-            controller: 'singleplayerCtrl as vm',
-            cache: false
-        })
-        $urlRouterProvider.otherwise('/onboarding');
-    });
-
-})();
+});
 
 
