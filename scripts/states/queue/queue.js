@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('app.queueState', [ui.router]);
+    var app = angular.module('app.queueState', ['ui.router']);
 
     app.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('queue', {
