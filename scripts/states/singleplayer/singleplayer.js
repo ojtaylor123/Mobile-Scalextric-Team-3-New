@@ -1,14 +1,18 @@
-var myApp = angular.module('singleplayerState', ['ui.router']);
+(function () {
 
-myApp.config(function($stateProvider) {
-  var singleplayerState = {
-    name: 'singleplayer',
-    url: '/singleplayer',
-    template: '<h3>singleplayer</h3>'
-  }
+    'use strict';
 
-  $stateProvider.state(singelplayerState);
+    var app = angular.module('app.singleplayerState');
 
-});
+    app.controller('singleplayerCtrl', singleplayerCtrl);
+
+    singleplayerCtrl.$inject = [];
+
+    function singleplayerCtrl() {
+        var vm = angular.extend(this, {});
+        return vm;
+    }
+
+})();
 
 
