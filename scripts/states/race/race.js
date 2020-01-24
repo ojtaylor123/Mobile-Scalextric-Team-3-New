@@ -3,9 +3,9 @@
 
     'use strict';
 
-    var app = angular.module('app.raceState', []);
+    var app = angular.module('app.raceState', ['ui.router']);
 
-    app.config(function ($stateProvider) {
+    app.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('race', {
             url: '/race',
             templateUrl: 'scripts/states/race/race.html',
