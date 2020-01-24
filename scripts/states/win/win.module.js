@@ -12,7 +12,7 @@
                 controller: 'winCtrl as vm',
                 cache: false
             })
-        $urlRouterProvider.otherwise('casual.html');
+        $urlRouterProvider.otherwise('casual');
     });
 
 })();
