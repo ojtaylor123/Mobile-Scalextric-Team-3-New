@@ -17,11 +17,9 @@
     ) {
         var vm = angular.extend(this, {});
         
-        vm.done = function(){
+        vm.update = function(){            
             $state.go('queue');
-        }
-            
-        var params = $stateParams;        
+        }     
     }
 
 })();
