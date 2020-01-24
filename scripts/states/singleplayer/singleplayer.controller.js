@@ -4,7 +4,7 @@
 
     var app = angular.module('app.singleplayerState');
 
-    app.controller('singleplayerCtrl', winCtrl);
+    app.controller('singleplayerCtrl', singleplayerCtrl);
 
     singleplayerCtrl.$inject = [];
 
