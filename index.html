@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+   <meta charset="utf-8">
     
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
    <link href="css/style.css" rel="stylesheet"/>  
     
     
@@ -21,38 +23,30 @@
     <!-- your app's js -->
     <script src="scripts/app.js"></script>
     
-    <!--states-->
+    <!--state module-->
     
     <script type="text/javascript" src="scripts/states/casual/casual.js"></script>
-    <script type="text/javascript" src="scripts/states/casual/casual.controller.js"></script>
-    
-      
     <script type="text/javascript" src="scripts/states/challenge/challenge.js"></script>
-    <script type="text/javascript" src="scripts/states/challenge/challenge.controller.js"></script>
-    
-      
     <script type="text/javascript" src="scripts/states/lose/lose.module.js"></script>
-    <script type="text/javascript" src="scripts/states/lose/lose.controller.js"></script>
-    
-      
     <script type="text/javascript" src="scripts/states/onboarding/onboarding.js"></script>
-    <script type="text/javascript" src="scripts/states/onboarding/onboarding.controller.js"></script>
-    
-      
     <script type="text/javascript" src="scripts/states/queue/queue.js"></script>
-    <script type="text/javascript" src="scripts/states/queue/queue.controller.js"></script>
-    
-      
-    <script type="text/javascript" src="scripts/states/race/race.js"></script>
-    <script type="text/javascript" src="scripts/states/race/race.controller.js"></script>
-    
-      
-    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.js"></script>
-    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.controller.js"></script>
-    
-      
+    <script type="text/javascript" src="scripts/states/race/race.js"></script>   
+    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.js"></script>  
     <script type="text/javascript" src="scripts/states/win/win.module.js"></script>
+    
+    
+    <!--controllers-->
+    
+    <script type="text/javascript" src="scripts/states/casual/casual.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/challenge/challenge.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/lose/lose.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/onboarding/onboarding.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/queue/queue.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/race/race.controller.js"></script>
+    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.controller.js"></script>
     <script type="text/javascript" src="scripts/states/win/win.controller.js"></script>
+    
+    
 
     
     
@@ -61,5 +55,6 @@
     <div ng-app="myApp">
       <h1>Hello, it's me...</h1>
     </div>
+     <ui-view></ui-view>
   </body>
 </html>
