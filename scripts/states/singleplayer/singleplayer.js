@@ -2,17 +2,17 @@
 
     'use strict';
 
-    var app = angular.module('app.singleplayerState');
+    var app = angular.module('app.singleplayerState', ['ui.router']);
 
-    app.controller('singleplayerCtrl', singleplayerCtrl);
-
-    singleplayerCtrl.$inject = ['$scope'];
-
-    function singleplayerCtrl($scope) {
-        var vm = angular.extend(this, {});
-        return vm;
-    }
+    app.config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('singleplayer', {
+            url: '/singleplayer',
+            templateUrl: 'scripts/states/singleplayer/singleplayer.html',
+            controller: 'singleplayerCtrl as vm',
+            cache: false
+        })
+        $urlRouterProvider.otherwise('/onboarding');
+    });
 
 })();
-
 
