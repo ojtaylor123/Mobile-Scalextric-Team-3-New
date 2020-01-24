@@ -2,7 +2,7 @@
 
   'use strict';
 
-  let app = angular.module('app.singleplayerState', []);
+ var app = angular.module('app.singleplayerState', []);
   
   app.controller('singleplayerCtrl', singleplayerCtrl);
 
