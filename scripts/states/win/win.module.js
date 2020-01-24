@@ -33,6 +33,6 @@
                     templateUrl: 'scripts/states/win/win.html',
                     controller: 'winCtrl as vm'
                 })
-            $urlRouterProvider.otherwise('/casual');
+            $urlRouterProvider.otherwise('/onboarding');
         });
 })();
