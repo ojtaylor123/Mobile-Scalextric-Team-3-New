@@ -1,17 +1,45 @@
-(function () {
-  angular.module('myApp', [
-    'ui.router'
-  ])
+angular.module('myApp', ['ui.router']);
 
-    .run(function ($state, $rootScope) {
-      $rootScope.$on('$stateChangeError', function (toState, toParams, fromState, fromParams) {
-        console.log('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
-
-        $state.get('onboarding').error = { code: 123, descriptions: 'Exception stack trace' }
-        return $state.go('onboarding');
-      });
-
+angular.module('myApp').config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider){
+    // sets default state
+    $urlRouterProvider.otherwise("/onboarding");
+    // sets up all the other states of the app
+    $stateProvider
+        .state('onboarding', {
+            url: '/onboarding',
+            templateUrl : 'scripts/states/onboarding/onboarding.html'
     })
-})();
+        .state('queue', {
+            url: '/queue',
+            templateUrl : 'scripts/states/queue/queue.html'
+    })
+        .state('race', {
+            url: '/race',
+            templateUrl : 'scripts/states/race/race.html'
+    })
+        .state('casual', {
+            url: '/casual',
+            templateUrl : 'scripts/states/casual/casual.html'
+    })
+        .state('singleplayer', {
+            url: '/singleplayer',
+            templateUrl : 'scripts/states/singleplayer/singleplayer.html'
+    })
+        .state('challenge', {
+            url: '/challenge',
+            templateUrl : 'scripts/states/challenge/challenge.html'
+    })
+        .state('win', {
+            url: '/win',
+            templateUrl : 'scripts/states/win/win.html'
+    })
+        .state('lose', {
+            url: '/lose',
+            templateUrl : 'scripts/states/lose/lose.html'
+    })
+}]);
 
-
+angular.module("myApp").run(function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+});
