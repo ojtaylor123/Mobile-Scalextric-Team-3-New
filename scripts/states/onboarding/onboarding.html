@@ -1,7 +1,8 @@
 <uiview>
   <div class="onboarding">
-    <h3>Onboarding</h3>
-    <p>This is the onboarding menu</p>
-     <button type="button" style="border-radius: 0;" ng-click="vm.goToQueue">Queue</button>
+    <h2>Onboarding</h2>
+    <p1>Welcome, please enter a name then press to join queue<br><br>
+    Name: ***<br><br></p1>
+    <button ng-click="$state.go('queue')">Join queue</button>
   </div>
 </uiview>
