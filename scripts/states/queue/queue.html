@@ -1,7 +1,11 @@
 <uiview>
   <div class="queue">
-
-    <h1> You are in the queue </h1>
-
+    <h2>Queue</h2>
+    <p1>You are in the queue please wait...<br></p1>
+    <ul>
+      <a ui-sref="singleplayer"><li>singleplayer</li></a>
+      <a ui-sref="casual"><li>casual</li></a>      
+    </ul>
+    <button ng-click="$state.go('onboarding')">Exit</button>
   </div>
 </uiview>
