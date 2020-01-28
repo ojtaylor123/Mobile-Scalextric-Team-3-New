@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <meta charset="utf-8">
-    
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-   <link href="assets/css/styles.css" rel="stylesheet"/>  
-    
-    <!-- angularjs js -->
-    <script src="./libs/angular-animate.min.js"></script>
-    <script src="./libs/angular-sanitize.js"></script>
-    <script src="./libs/angular-ui-router.js"></script>
-    <script src="./libs/angular.js"></script>
-    
-    
-    <!-- your app's js -->
+    <!--angularjs directories-->
+    <script src="assets/lib/angular.js"></script>
+
+    <script src="assets/lib/angular-ui-router.js"></script>
+
+    <script src="assets/lib/angular-sanitize.js"></script>
+
+    <script src="assets/lib/angular-animate.min.js"></script>    
+
+    <!--css stylesheet-->
+    <link href="assets/css/style.css" rel="stylesheet"/>    
+
+    <!--app controller-->
     <script src="scripts/app.js"></script>
-    
-    <!--state module-->
-    
-    <script type="text/javascript" src="scripts/states/casual/casual.js"></script>
-    <script type="text/javascript" src="scripts/states/challenge/challenge.js"></script>
-    <script type="text/javascript" src="scripts/states/lose/lose.module.js"></script>
-    <script type="text/javascript" src="scripts/states/onboarding/onboarding.js"></script>
-    <script type="text/javascript" src="scripts/states/queue/queue.js"></script>
-    <script type="text/javascript" src="scripts/states/race/race.js"></script>   
-    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.js"></script>  
-    <script type="text/javascript" src="scripts/states/win/win.module.js"></script>
-    
-    
-    <!--controllers-->
-    
-    <script type="text/javascript" src="scripts/states/casual/casual.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/challenge/challenge.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/lose/lose.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/onboarding/onboarding.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/queue/queue.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/race/race.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/singleplayer/singleplayer.controller.js"></script>
-    <script type="text/javascript" src="scripts/states/win/win.controller.js"></script>  
-    
+
   </head>
-  <body>
-    <div ng-app="myApp">
-      <h1>Hello, it's me...</h1>
+  <body ng-app="myApp">
+    <div class="app">
+      <h1>Mobile Scalextric 3</h1>
       <ui-view></ui-view>
-    </div>     
+    </div>
   </body>
 </html>
