@@ -1,45 +1,23 @@
 body{
-
   font-family: "Verdana";
-
   background-color: #4d75b3;/*blue*/
-
   color: #ffffff;/*white*/
-
 }
-
-
 
 button {
-
   background-color: #f44336;/*red*/
-
   color: #ffffff;/*white*/
-
   border: none;
-
   padding: 1vh 2vh;
-
   text-align: center;
-
   border-radius: 2%;
-
   font-size: 100%;
-
 }
-
-
 
 button:hover {
-
   background-color: #da190b;/*dark red*/
-
 }
 
-
-
 a:link, a:visited {
-
   color: #800080;/*purple*/
-
 }
