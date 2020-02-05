@@ -2,10 +2,10 @@
   <div class="onboarding">
     <h2>Onboarding</h2>
     <p1>Welcome, please enter a name then press to join queue<br><br>
-    <form>
-      Name:
-      <input type="text" name="name"><br><br></p1>
-      </form>
-    <button ng-click="$state.go('queue')">Join queue</button>
+    <form name="setup_form" ng-submit="casual.go(setup_form.$valid)">
+      Channel <select ng-model="indexView.channel" ng-options="c for c in indexView.channels" required></select> <br>
+      <input type="submit" value="Go" ng-disabled="steup_form.$invalid"></input>
+    </form>
+    <button ng-click="$state.go('casual')">Join queue</button>
   </div>
 </uiview>
