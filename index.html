@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--angularjs directories-->
-    <meta charset="utf-8">
-    
+  <head>    
+    <meta charset="utf-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
+    <!--angularjs directories-->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    
-    <script src="assets/lib/angular.js"></script>
-    <script src="assets/lib/angular-ui-router.js"></script>
-    <script src="assets/lib/angular-sanitize.js"></script>
-    <script src="assets/lib/angular-animate.min.js"></script>   
+    <script src="./assets/lib/angular.js"></script>
+    <script src="./assets/lib/angular-ui-router.js"></script>
+    <script src="./assets/lib/angular-sanitize.js"></script>
+    <script src="./assets/lib/angular-animate.min.js"></script>   
     
     <!--css stylesheet-->
-    <link href="assets/css/style.css" rel="stylesheet"/>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="./assets/css/style.css" rel="stylesheet"/>    
 
-    <!--app controller-->
-    <script src="scripts/app.js"></script>
+    <!--app controllers-->
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/states/onboarding/onboardingCtrl.js"></script>
+    <script src="./scripts/states/casual/casualCtrl.js"></script>
     
     <!--mqtt services-->
     <script src="./scripts/components/data/dataService.js"></script>
     <script src="./scripts/components/mqtt/mqttService.js"></script>
     
-    
-    <script src="./scripts/components/brokerDetails/brokerDetailsConstant.js"></script>
-    
-
-    
      <!--constants-->
-    <script src="./app/components/brokerDetails/brokerDetailsConstant.js"></script>
+    <script src="./scripts/components/brokerDetails/brokerDetailsConstant.js"></script>
     
 
   </head>
   <body ng-app="myApp">
     <div class="app">
       <div class="text-center">
-      <h1>Mobile Scalextric 3</h1>
-      <ui-view></ui-view>
+        <h1>Mobile Scalextric 3</h1>
+        <ui-view></ui-view>
       </div>
-     </div>
+    </div>
   </body>
 </html
