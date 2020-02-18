@@ -101,6 +101,7 @@ function config($stateProvider, $urlRouterProvider) {
     };
     
     $stateProvider.state(onboardingState);
+    $stateProvider.state(queueState);
     $stateProvider.state(casualState);
     
     $urlRouterProvider.otherwise('/onboarding');
