@@ -1,16 +1,16 @@
-(function () {
+angular.module('app').controller('queueCtrl', queueCtrl);
 
-    'use strict';
+queueCtrl.$inject = [
+    '$scope',
+    '$state',
+    '$stateParams',
+    'mqttService',
+    'brokerDetails'
+];
 
-    var app = angular.module('app.queueState');
+function queueCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
+    var vm = this;
 
-    app.controller('queueCtrl', queueCtrl);
+    var channel = $stateParams.channel;  
 
-    queueCtrl.$inject = [];
-
-    function queueCtrl() {
-        var vm = angular.extend(this, {});
-        return vm;
-    }
-
-})();
+}
