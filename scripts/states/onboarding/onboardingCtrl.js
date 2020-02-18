@@ -1,4 +1,4 @@
-angular.module('app').contoller('onboardingCtrl', onboardingCtrl);
+angular.module('app').controller('onboardingCtrl', onboardingCtrl);
 
 onboardingCtrl.$inject = [
     '$rootScope',
