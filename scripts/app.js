@@ -50,6 +50,31 @@ function config($stateProvider, $urlRouterProvider) {
         }
     }
     
+    var queueState = {
+        name: 'queue',
+        url: '/queue',
+        templateUrl: 'scripts/states/queue/queue.html',
+        controller: 'queueCtrl',
+        controllerAs: 'queue',
+        params : {
+            channel: null,
+            ip_address: null
+        },
+        resolve: {
+            parameters: ['$q', '$state','$stateParams', function ($q, $state,$stateParams) {
+                var deferred = $q.defer();
+               
+                if ($stateParams.channel === null) {
+                    $state.transitionTo('onboarding', {});
+                }else{
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
+            }]
+        }
+    }
+    
     var casualState = {
         name: 'casual',
         url: '/casual',
