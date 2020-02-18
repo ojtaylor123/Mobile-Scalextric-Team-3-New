@@ -1,7 +1,21 @@
 body{
-  font-family: "Verdana";
-  background-color: #4d75b3;/*blue*/
-  
+    font-family: "Verdana";
+    background-color: #4d75b3;/*blue*/
+    color: white;
+    text-align: center;
+}
+
+.wrapper{
+    background-color: #f44336;/*red*/
+    border: solid white;
+}
+
+.throttle{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
 }
 
 button {
