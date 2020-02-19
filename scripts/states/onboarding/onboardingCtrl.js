@@ -1,13 +1,13 @@
-angular.module('app').controller('IndexViewCtrl', IndexViewCtrl);
+angular.module('app').controller('onboardingCtrl', onboardingCtrl);
 
-IndexViewCtrl.$inject = [
+onboardingCtrl.$inject = [
     '$rootScope',
     '$state',
     'mqttService',
     'brokerDetails'
 ];
 
-function IndexViewCtrl($rootScope, $state, mqttService, brokerDetails) {
+function onboardingCtrl($rootScope, $state, mqttService, brokerDetails) {
     var vm = this;
 
     //Initialises the range of channels that can be selected and the selected channel
@@ -49,7 +49,7 @@ function IndexViewCtrl($rootScope, $state, mqttService, brokerDetails) {
 
             mqttService.connect(function (success, error) {
                 if (success) {
-                    $state.transitionTo('carControl',
+                    $state.transitionTo('casual',
                         {
                             channel: vm.channel,
                         });

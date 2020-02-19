@@ -10,13 +10,10 @@ config.$inject = [
 
 function config($stateProvider, $urlRouterProvider) {
 
-    /* 
-     Index Page
-     user can enter ip address and channel number
-    */
-    var indexState = {
-        name: 'index',
-        url: '/index?uuid&brokerHost&brokerPort&username&password&ssl',
+    //states
+    var onboardingState = {
+        name: 'onboarding',
+        url: '/onboarding?uuid&brokerHost&brokerPort&username&password&ssl',
         params: {
             uuid : {
                 dynamic: false
@@ -38,9 +35,9 @@ function config($stateProvider, $urlRouterProvider) {
             }
 
         },
-        templateUrl: 'app/shared/index/indexView.html',
-        controller: 'IndexViewCtrl',
-        controllerAs: 'indexView',
+        templateUrl: 'scripts/states/onboarding/onboarding.html',
+        controller: 'onboardingCtrl',
+        controllerAs: 'onboarding',
         resolve: {
             broker: ['$stateParams','brokerDetails', function ($stateParams,brokerDetails) {
             
@@ -54,16 +51,12 @@ function config($stateProvider, $urlRouterProvider) {
         }
     }
 
-    /*
-     Car Control Page
-     User can control the cars throttle
-    */
-    var carControlState = {
-        name: 'carControl',
-        url: '/control',
-        templateUrl: 'app/shared/carControl/carControlView.html',
-        controller: 'CarControlViewCtrl',
-        controllerAs: 'carControlView',
+    var casualState = {
+        name: 'casual',
+        url: '/casual',
+        templateUrl: 'scripts/states/casual/casual.html',
+        controller: 'casualCtrl',
+        controllerAs: 'casual',
         params: {
             channel: null,
             ip_address: null
@@ -74,7 +67,7 @@ function config($stateProvider, $urlRouterProvider) {
                 var deferred = $q.defer();
                
                 if ($stateParams.channel === null) {
-                    $state.transitionTo('index', {});
+                    $state.transitionTo('onboarding', {});
                 }else{
                     deferred.resolve();
                 }
@@ -84,10 +77,10 @@ function config($stateProvider, $urlRouterProvider) {
         }
     };
 
-    $stateProvider.state(indexState);
-    $stateProvider.state(carControlState);
+    $stateProvider.state(onboardingState);
+    $stateProvider.state(casualState);
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/onboarding');
 }
 
 angular.module('app').run(run);
@@ -95,5 +88,5 @@ run.$inject = [
 ]
 
 function run() {
-    console.log('version 1.0.0 Yusof Bandar');
+    console.log('Mobile Scalextric 3 by James Sweetland, Sam Lord, Olly Taylor and Nathan Butler');
 }
