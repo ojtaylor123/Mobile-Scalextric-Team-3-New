@@ -13,6 +13,10 @@ function queueCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     var channel = $stateParams.channel;
     
+    vm.go = go;
+    
+    vm.exit = exit;
+    
     function go() {
         $state.transitionTo('casual', {
             channel: vm.channel,
