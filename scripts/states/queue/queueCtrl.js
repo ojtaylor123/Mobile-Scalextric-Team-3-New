@@ -18,4 +18,10 @@ function queueCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
             channel: vm.channel,
         })
     }
+    
+    function exit() {
+        $state.transitionTo('onboarding', {
+            channel: vm.channel,
+        })
+    }
 }
