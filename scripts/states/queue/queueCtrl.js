@@ -11,6 +11,11 @@ queueCtrl.$inject = [
 function queueCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     var vm = this;
 
-    var channel = $stateParams.channel;  
-
+    var channel = $stateParams.channel;
+    
+    function go() {
+        $state.transitionTo('casual', {
+            channel: vm.channel,
+        })
+    }
 }
