@@ -1,9 +1,0 @@
-<span ng-bind="casual.throttle" ng-show="!casual.throttleError"></span>
-<span ng-show="casual.throttleError">Error</span>
-<div>
-    <input type="range" min="0" max="100" value="0" orient="vertical" class="throttle" ng-model="casual.throttle">
-    <input type="button" value="Stop" ng-click="casual.stop()"></input>
-</div>
-<span ng-bind="casual.actualThrottle"></span>
-<button ng-repeat="resource in casual.resources track by $index" ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
-<select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
