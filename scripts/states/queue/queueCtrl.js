@@ -16,12 +16,10 @@ function queueCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     function go() {
         $state.transitionTo('casual', {
             channel: vm.channel,
-        })
+        });
     }
     
     function exit() {
-        $state.transitionTo('onboarding', {
-            channel: vm.channel,
-        })
+        $state.transitionTo('onboarding', {});
     }
 }
