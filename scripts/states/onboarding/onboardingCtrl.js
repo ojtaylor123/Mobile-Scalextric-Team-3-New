@@ -42,7 +42,7 @@ function onboardingCtrl($rootScope, $state, mqttService, brokerDetails) {
             
             mqttService.connect(function (success, error) {
                 if(success){
-                    $state.transitionTo('casual', {
+                    $state.transitionTo('queue', {
                         channel: vm.channel,
                     })
                 }
