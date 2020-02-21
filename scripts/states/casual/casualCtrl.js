@@ -9,12 +9,15 @@ casualCtrl.$inject = [
 ];
 
 function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
+
+    
     var vm = this;
 
     var changed = false;
 
     var channel = $stateParams.channel;
 
+    //Car control starts here
     const DEFAULT_THROTTLE = 0;
 
     vm.throttle = DEFAULT_THROTTLE;
@@ -22,7 +25,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     vm.resources = [];
 
     vm.targetChannels = Array.apply(null, {
-        length: 3
+        length: 2
     }).map(Function.call, Number);;
 
     vm.targetChannels = vm.targetChannels.filter(targetChannel => targetChannel !== channel );
@@ -111,5 +114,6 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
             mqttService.publish(throttleTopic, JSON.stringify(payload));
         }
     })
+    //Car control ends here
 
 }
