@@ -1,0 +1,18 @@
+<uiview>
+  <div class="race">
+    <div id="test">
+      <script type="text/javascript">
+      document.getElementById('test').innerHTML = 
+     "Nickname: " + sessionStorage.getItem('nickname');
+      </script>
+    </div>
+    <h2>Race</h2>
+    <p1>Vroom vroom</p1>
+    <khs></khs>
+    <ul class ="list-unstyled">
+      <a ui-sref="win"><li>win</li></a>
+      <a ui-sref="lose"><li>lose</li></a>
+    </ul>
+    <button ng-click="$state.go('onboarding')">Exit</button>
+  </div>
+</uiview>
