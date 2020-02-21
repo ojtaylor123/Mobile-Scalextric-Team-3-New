@@ -1,3 +1,12 @@
+angular.module('app').controller('winCtrl', winCtrl);
+
+winCtrl.$inject = [
+    '$rootScope',
+    '$state',
+    'mqttService',
+    'brokerDetails'
+];
+
 (function () {
 
     'use strict';
