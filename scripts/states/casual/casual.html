@@ -7,5 +7,8 @@
 <span ng-bind="casual.actualThrottle"></span>
 <button ng-repeat="resource in casual.resources track by $index" ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
 <select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
+<br><br>
 
-<a ng-ref="win">Win</a>
+<A
+  ng-href="win">
+</A>
