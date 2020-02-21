@@ -61,7 +61,6 @@ function config($stateProvider, $urlRouterProvider) {
             channel: null,
             ip_address: null
         },
-        //resolve used to check if transition contains channel and ipaddress params
         resolve: {
             parameters: ['$q', '$state','$stateParams', function ($q, $state,$stateParams) {
                 var deferred = $q.defer();

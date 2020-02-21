@@ -10,10 +10,9 @@ onboardingCtrl.$inject = [
 function onboardingCtrl($rootScope, $state, mqttService, brokerDetails) {
     var vm = this;
 
-    //Initialises the range of channels that can be selected and the selected channel
     vm.channels = Array.apply(null, {
-        length: 5
-    }).map(Function.call, Number);;
+        length: 2
+    }).map(Function.call, Number);
     vm.channel = 0;
 
 
@@ -21,10 +20,6 @@ function onboardingCtrl($rootScope, $state, mqttService, brokerDetails) {
 
     vm.go = go;
 
-    /*
-     Validates ip address and channel, if valid state changes to the Car Control state .
-     If details are not valid alert is shown.
-    */
     function go(valid) {
         if (!valid) {
             alert("Invalid Details")
