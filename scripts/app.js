@@ -61,7 +61,6 @@ function config($stateProvider, $urlRouterProvider) {
             channel: null,
             ip_address: null
         },
-        //resolve used to check if transition contains channel and ipaddress params
         resolve: {
             parameters: ['$q', '$state','$stateParams', function ($q, $state,$stateParams) {
                 var deferred = $q.defer();
@@ -82,12 +81,6 @@ function config($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/onboarding');
 }
-    
-    var winState = {
-       name: 'win',
-        url: '/win',
-       templateUrl: 'scripts/states/win/win.html',
-    }
 
 angular.module('app').run(run);
 run.$inject = [

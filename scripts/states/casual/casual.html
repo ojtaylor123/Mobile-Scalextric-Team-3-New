@@ -1,12 +1,18 @@
-<span ng-bind="casual.throttle" ng-show="!casual.throttleError"></span>
-<span ng-show="casual.throttleError">Error</span>
-<div>
-    <input type="range" min="0" max="100" value="0" orient="vertical" class="throttle" ng-model="casual.throttle">
-    <input type="button" value="Stop" ng-click="casual.stop()"></input>
+<input type="button" id="exit" value="x" ng-click="casual.stop()"></input><br>
+<div id="info">
+    <div id="action-box">Action Box</div>
+    Last Lap:<br> 00:00:00<br>
+    Fastest Lap:<br> 00:00:00<br>
+    <div id="weapon-box">
+        Weapon Box<br>
+        <div ng-repeat="resource in casual.resources track by $index">
+            <button ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
+        </div>
+    </div>    
 </div>
-<span ng-bind="casual.actualThrottle"></span>
-<button ng-repeat="resource in casual.resources track by $index" ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
-<select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
+<div id="car-controls">
+    <span ng-bind="casual.throttle" ng-show="!casual.throttleError"></span>
+    <span ng-show="casual.throttleError">Error</span>    
+    <input type="range" min="0" max="100" value="0" orient="vertical" class="throttle" ng-model="casual.throttle">    
+</div>
 <br><br>
-
-<a href="win">Win</a>
