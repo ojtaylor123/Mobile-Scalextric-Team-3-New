@@ -49,13 +49,7 @@ function config($stateProvider, $urlRouterProvider) {
                 if($stateParams.ssl) brokerDetails.SSL = ($stateParams.ssl.toLowerCase() == 'true');
             }]
         }
-    },
-    
-    var winState = {
-       name: 'win',
-        url: '/win',
-       templateUrl: 'scripts/states/win/win.html',
-    },
+    }
 
     var casualState = {
         name: 'casual',
@@ -88,6 +82,12 @@ function config($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/onboarding');
 }
+    
+    var winState = {
+       name: 'win',
+        url: '/win',
+       templateUrl: 'scripts/states/win/win.html',
+    }
 
 angular.module('app').run(run);
 run.$inject = [
