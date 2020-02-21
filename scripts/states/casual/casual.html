@@ -8,5 +8,3 @@
 <button ng-repeat="resource in casual.resources track by $index" ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
 <select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
 <br><br>
-
-<button ng-click="$state.go('win')">win</button>
