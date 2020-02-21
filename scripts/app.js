@@ -50,11 +50,11 @@ function config($stateProvider, $urlRouterProvider) {
             }]
         }
     }
-   // var winState = {
-    //    name: 'win',
-   //     url: '/win',
-   //     templateUrl: 'scripts/states/win/win.html',
- //   },
+    var winState = {
+        name: 'win',
+        url: '/win',
+        templateUrl: 'scripts/states/win/win.html',
+    },
 
     var casualState = {
         name: 'casual',
