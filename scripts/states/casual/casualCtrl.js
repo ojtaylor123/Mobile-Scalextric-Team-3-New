@@ -9,7 +9,6 @@ casualCtrl.$inject = [
 ];
 
 function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
-
     
     var vm = this;
 
@@ -50,7 +49,6 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     mqttService.subscribe(getResourcesTopic);
 
     function stop() {
-
         var payload = {
             set : 0
         }
@@ -90,7 +88,6 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
         } else if (message.topic === getResourcesTopic) {
             vm.resources = JSON.parse(message.payloadString);
             vm.resources.forEach(resource => {
-
                 mqttService.subscribe(resourceStateTopic.replace(/\{resourceId\}/, resource.id));
             });
             $scope.$apply();
@@ -114,6 +111,4 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
             mqttService.publish(throttleTopic, JSON.stringify(payload));
         }
     })
-    //Car control ends here
-
 }
