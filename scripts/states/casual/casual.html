@@ -1,16 +1,17 @@
 <input type="button" id="exit" value="x" ng-click="casual.stop()"></input><br>
 <div id="info">
     <div id="action-box">
-        Action Box
-        <div class="action"></div>
+        <b>Action Box</b>
+        <div id="action"></div>
     </div>
     Last Lap:<br> 00:00:00<br>
     Fastest Lap:<br> 00:00:00<br>
     <div id="weapon-box">
-        Weapon Box<br>
+        <b>Weapon Box</b><br>
         <div ng-repeat="resource in casual.resources track by $index">
             <button ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
         </div>
+        <input type="button" value="Test" ng-click="casual.actionUsed(0)"></input>
         <select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
     </div>    
 </div>
@@ -19,4 +20,3 @@
     <span ng-show="casual.throttleError">Error</span>    
     <input type="range" min="0" max="100" value="0" orient="vertical" class="throttle" ng-model="casual.throttle">    
 </div>
-<span ng-bind="casual.actualThrottle"></span>

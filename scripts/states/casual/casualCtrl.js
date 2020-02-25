@@ -16,9 +16,32 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     var channel = $stateParams.channel;//sets channel to one sent from previous state
 
-    function actionUsed(){
+    //action box texzt setter
+    function actionUsed(resourceId, target){
+        target = vm.targetChannel;
         var div = angular.element(document.querySelector('#action'));
-        div.html('This is text.');
+        if(target == 0){
+            target = "red"
+        }
+        else if(target == 1){
+            target = "yellow"
+        }
+        else if(target == -1){
+            target = "no"
+        }
+        
+        if(resourceId == 0){
+            div.html('Test weapon used on ' + target + " car");
+        }
+        else if(resourceId == 1){
+            div.html('Oil slick used on ' + target + " car");
+        }
+        else if(resourceId == 2){
+            div.html('Puncture used on ' + target + " car");
+        }
+        else if(resourceId == 3){
+            div.html('Smart bomb used on ' + target + " car");
+        }        
     }
 
     vm.actionUsed = actionUsed;
@@ -66,7 +89,6 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     }
 
     function fireSpecialWeapon(resourceId) {
-        actionUsed();
         let payload = {
             "state": "requested",
             "target": vm.targetChannel
