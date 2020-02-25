@@ -16,6 +16,13 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     var channel = $stateParams.channel;//sets channel to one sent from previous state
 
+    function actionUsed(){
+        var div = angular.element(document.querySelector('#action'));
+        div.html('This is text.');
+    }
+
+    vm.actionUsed = actionUsed;
+
     //Car control starts here
     const DEFAULT_THROTTLE = 0;
 
@@ -25,7 +32,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     vm.targetChannels = Array.apply(null, {
         length: 2
-    }).map(Function.call, Number);;
+    }).map(Function.call, Number);
 
     vm.targetChannels = vm.targetChannels.filter(targetChannel => targetChannel !== channel );
     console.log(vm.targetChannels);
@@ -59,6 +66,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     }
 
     function fireSpecialWeapon(resourceId) {
+        actionUsed();
         let payload = {
             "state": "requested",
             "target": vm.targetChannel

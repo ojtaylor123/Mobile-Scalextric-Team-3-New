@@ -10,9 +10,10 @@ onboardingCtrl.$inject = [
 function onboardingCtrl($rootScope, $state, mqttService, brokerDetails) {
     var vm = this;
 
-    vm.channels = Array.apply(null, {
-        length: 2
-    }).map(Function.call, Number);
+    vm.channels = {
+        Red: 0,
+        Yellow: 1
+    }
     vm.channel = 0;
 
 
