@@ -9,12 +9,10 @@
     raceCtrl.$inject = [];
 
     function raceCtrl() {
+        
         var vm = angular.extend(this, {});
-        return vm;
-    }
-    
-    function weaponBox() {
-
+        
+   function weaponBox() {
 
             var myArray = [
             "Oil Slick",
@@ -28,5 +26,10 @@
         
         }
 
-        setInterval(weaponBox, 5000)
+        setInterval(weaponBox, 3000)
+
+
+        return vm;
+    
+    }
 })();
