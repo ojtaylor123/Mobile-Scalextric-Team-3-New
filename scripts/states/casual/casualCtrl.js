@@ -14,7 +14,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     var changed = false;
 
-    var channel = $stateParams.channel;
+    var channel = $stateParams.channel;//sets channel to one sent from previous state
 
     //Car control starts here
     const DEFAULT_THROTTLE = 0;
@@ -60,8 +60,8 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
 
     function fireSpecialWeapon(resourceId) {
         let payload = {
-            state: "requested",
-            target: vm.targetChannel
+            "state": "requested",
+            "target": vm.targetChannel
         };
         mqttService.publish(resourceStateTopic.replace(/\{resourceId\}/, resourceId).replace(/\{channel\}/, channel), JSON.stringify(payload));
     }
