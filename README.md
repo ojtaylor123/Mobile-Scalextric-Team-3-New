@@ -1,7 +1,7 @@
 # Mobile-Scalextric-Team-3
 cheeky coding project with the boys
 
-QR Code link:
+QR Code link:<br>
 ![Image of QR Code](https://github.com/Mobile-Scalextric-Team-3/Mobile-Scalextric-Team-3/blob/master/assets/img/QRcode.png)
 
 Hyperlink:
