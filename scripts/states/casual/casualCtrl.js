@@ -17,8 +17,8 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     var channel = $stateParams.channel;//sets channel to one sent from previous state
 
     //action box texzt setter
-    function actionUsed(resourceId, target){
-        target = vm.targetChannel;
+    function actionUsed(resourceId){
+        var target = vm.targetChannel;
         var div = angular.element(document.querySelector('#action'));
         if(target == 0){
             target = "red"
