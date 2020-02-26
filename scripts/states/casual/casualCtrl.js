@@ -30,10 +30,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
             target = "no"
         }
         
-        if(resourceId == 0){
-            div.html('Test weapon used on ' + target + " car");
-        }
-        else if(resourceId == 1){
+        if(resourceId == 1){
             div.html('Oil slick used on ' + target + " car");
         }
         else if(resourceId == 2){
@@ -53,14 +50,27 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     vm.actualThrottle = DEFAULT_THROTTLE;
     vm.resources = [];
 
+    //sets target channels
     vm.targetChannels = Array.apply(null, {
         length: 2
     }).map(Function.call, Number);
 
+    /*
+    //sets list to show all but the channel you are on
     vm.targetChannels = vm.targetChannels.filter(targetChannel => targetChannel !== channel );
     console.log(vm.targetChannels);
 
+    //default target channel 0
     vm.targetChannel = -1;
+    */
+
+    if(channel == 0){
+        vm.targetChannel = 1;
+    }
+    else if(channel == 1){
+        vm.targetChannel = 0;
+    }
+    
 
     vm.throttleError = false;
 
@@ -89,6 +99,7 @@ function casualCtrl($scope, $state, $stateParams, mqttService, brokerDetails) {
     }
 
     function fireSpecialWeapon(resourceId) {
+        actionUsed(resourceId);
         let payload = {
             "state": "requested",
             "target": vm.targetChannel

@@ -11,8 +11,7 @@
         <div ng-repeat="resource in casual.resources track by $index">
             <button ng-model="casual.resources[$index]" ng-click="casual.fireSpecialWeapon(resource.id)">{{resource.name}}</button>
         </div>
-        <input type="button" value="Test" ng-click="casual.actionUsed(0)"></input>
-        <select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>
+        <!--<select ng-model="casual.targetChannel" ng-options="c for c in casual.targetChannels" required></select>-->
     </div>    
 </div>
 <div id="car-controls">
